@@ -5,7 +5,7 @@ var Main = /** @class */ (function () {
     }
     Main.onWindowAllClosed = function () {
         if (process.platform !== 'darwin') {
-            this.application.quit();
+            Main.application.quit();
         }
     };
     Main.onClose = function () {

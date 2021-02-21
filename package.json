@@ -2,11 +2,11 @@
   "name": "electron-calculadora",
   "version": "1.0.0",
   "description": "Calculadora de binario a decimal y viceversa",
-  "main": "index.js",
+  "main": "dist/App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron-forge start",
-    "package": "electron-forge package",
+    "start": "electron-forge start dist/App.js",
+    "package": "electron-forge package dist/App.js",
     "make": "electron-forge make"
   },
   "keywords": [
