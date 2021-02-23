@@ -15,19 +15,21 @@ var calcularDecimalABinario = function (numero) {
 };
 document.getElementById('calcularDecimal').addEventListener('click', function () {
     var binario = Number(document.getElementById('valorBinario').value);
-    if (!binario || /^[0-9]*$/.test(String(binario))) {
+    if (!binario || !(/^[0-1]*$/.test(String(binario)))) {
         document.getElementById('resultado1').innerHTML = 'Valor inválido.';
-        return;
     }
-    var resultado = calcularBinarioADecimal(binario);
-    document.getElementById('resultado1').innerHTML = String(resultado);
+    else {
+        var resultado = calcularBinarioADecimal(binario);
+        document.getElementById('resultado1').innerHTML = String(resultado);
+    }
 });
 document.getElementById('calcularBinario').addEventListener('click', function () {
     var decimal = Number(document.getElementById('valorDecimal').value);
     if (!decimal) {
         document.getElementById('resultado2').innerHTML = 'Valor inválido.';
-        return;
     }
-    var resultado = calcularDecimalABinario(decimal);
-    document.getElementById('resultado2').innerHTML = String(resultado);
+    else {
+        var resultado = calcularDecimalABinario(decimal);
+        document.getElementById('resultado2').innerHTML = String(resultado);
+    }
 });

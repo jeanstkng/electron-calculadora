@@ -17,21 +17,21 @@ let calcularDecimalABinario = (numero: number): number => {
 
 document.getElementById('calcularDecimal')!.addEventListener('click', () => {
     let binario: number = Number((<HTMLInputElement>document.getElementById('valorBinario')).value);
-    if (!binario || /^[0-9]*$/.test(String(binario))) {
+    if (!binario || !(/^[0-1]*$/.test(String(binario)))) {
         document.getElementById('resultado1')!.innerHTML = 'Valor inválido.';
-        return;
+    } else {
+        let resultado: number = calcularBinarioADecimal(binario);
+        document.getElementById('resultado1')!.innerHTML = String(resultado);
     }
-    let resultado: number = calcularBinarioADecimal(binario);
-    document.getElementById('resultado1')!.innerHTML = String(resultado);
 });
 
 document.getElementById('calcularBinario')!.addEventListener('click', () => {
     let decimal: number = Number((<HTMLInputElement>document.getElementById('valorDecimal')).value);
     if (!decimal) {
         document.getElementById('resultado2')!.innerHTML = 'Valor inválido.';
-        return;
+    } else {
+        let resultado: number = calcularDecimalABinario(decimal);
+        document.getElementById('resultado2')!.innerHTML = String(resultado);
     }
-    let resultado: number = calcularDecimalABinario(decimal);
-    document.getElementById('resultado2')!.innerHTML = String(resultado);
 });
 
