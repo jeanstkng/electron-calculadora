@@ -1,8 +1,8 @@
 "use strict";
-var calcularBinarioADecimal = function (numero) {
+function calcularBinarioADecimal(numero) {
     return parseInt("" + numero, 2);
-};
-var calcularDecimalABinario = function (numero) {
+}
+function calcularDecimalABinario(numero) {
     var binario = 0;
     var resto, i = 1;
     while (numero != 0) {
@@ -12,22 +12,14 @@ var calcularDecimalABinario = function (numero) {
         i = i * 10;
     }
     return binario;
-};
+}
 document.getElementById('calcularDecimal').addEventListener('click', function () {
     var binario = Number(document.getElementById('valorBinario').value);
-    if (!binario || /^[0-9]*$/.test(String(binario))) {
-        document.getElementById('resultado1').innerHTML = 'Valor inválido.';
-        return;
-    }
     var resultado = calcularBinarioADecimal(binario);
     document.getElementById('resultado1').innerHTML = String(resultado);
 });
 document.getElementById('calcularBinario').addEventListener('click', function () {
     var decimal = Number(document.getElementById('valorDecimal').value);
-    if (!decimal) {
-        document.getElementById('resultado2').innerHTML = 'Valor inválido.';
-        return;
-    }
     var resultado = calcularDecimalABinario(decimal);
     document.getElementById('resultado2').innerHTML = String(resultado);
 });
